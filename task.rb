@@ -145,14 +145,23 @@ end
 
 class UserQ17
   # 以下に回答を記載
-  def initialize
-    @name = "名前 : "
-    @age = "年齢 : "
-    @gender = "性別 : "
-    @admin = "管理者権限 : "
+  def initialize(**params)
+    @name = params[:name]
+    @age = params[:age]
+    @gender = params[:gender]
+    @admin = params[:admin]
   end
   def info
-    puts 
+    # 有り無しの判断を変数で最初に定義しておく
+    admin = @admin ? "有り" : "無し"
+    # ヒアドキュメントを使用してinitializeの変数を出力
+    puts <<~EOS
+    名前：#{@name}
+    年齢：#{@age}
+    性別：#{@gender}
+    管理者権限：#{admin} 
+    EOS
+  
   end
 end
 
