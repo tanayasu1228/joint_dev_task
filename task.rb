@@ -236,7 +236,7 @@ end
 
 class Zoo
   # 以下に回答を記載
-  # attr_reader :name, :entry_fee
+  #  attr_reader :name, :entry_fee はクラス内で呼び出しているので不要！
   # 年齢別価格の初期設定
   def initialize(**params)
     @name = params[:name]
